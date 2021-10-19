@@ -1,5 +1,5 @@
 # Badger Vehicle Spawner
-Badger Vehicle Spawner is a simple Vehicle Spawner Menu using [MenuAPI]["https://github.com/TomGrobbe/MenuAPI"]
+Badger Vehicle Spawner is a simple Vehicle Spawner Menu using [MenuAPI]("https://github.com/TomGrobbe/MenuAPI")
 
 ## Features
 **Ragdoll:** Players can toggle ragdoll by pressing "U" by default, editable in config.  
