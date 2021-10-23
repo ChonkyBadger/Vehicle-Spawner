@@ -9,7 +9,7 @@ Configuration is done within the config.json file, found in the folder named "Co
 `enabledInEmergencyVehicles:` This determines whether or not the menu can be opened while in a vehicle apart of the Emergency category, such as a police car. Value must be "true" or "false".  
 
 `menus:` This is where you set up each category. In the default config, there are two cateogires so you can see how to set up a category and have multiple.  
-  `name:` This decides the display name for each category.  
+&nbsp;&nbsp;&nbsp;&nbsp;`name:` This decides the display name for each category.  
   `aceRequired:` This is the ace perm required to see the category. You can change this value.  
   `vehicles:` This is an array which holds all the vehicles.  
     `name:` This is the display name for the vehicle.  
