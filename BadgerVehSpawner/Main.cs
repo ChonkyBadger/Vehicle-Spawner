@@ -25,16 +25,18 @@ namespace BadgerVehSpawner
                 SpawnCode = spawncode;
 			}
         }
-
+        
         public class SubMenu
         {
             public string Name;
+            public string AceRequired;
             public Veh[] Vehicles;
 
             [JsonConstructor]
-            public SubMenu(string name, Veh[] vehicles)
+            public SubMenu(string name, string aceRequired, Veh[] vehicles)
 			{
                 Name = name;
+                AceRequired = aceRequired;
                 Vehicles = vehicles;
 			}
         }
@@ -45,10 +47,11 @@ namespace BadgerVehSpawner
             mainMenu.OpenMenu();
 		}
 
+        //private SubMenu[] subMenus;
         private SubMenu[] subMenus;
         private bool rightAlligned;
         private Control menuKey;
-        private bool enabledInEmergencyVehicles;
+        private bool enabledInEmergencyVehicles; 
 
         public Main()
 		{
@@ -58,12 +61,18 @@ namespace BadgerVehSpawner
             menuKey = (Control)(int)cfg.SelectToken("menuKey");
             rightAlligned = (bool)cfg.SelectToken("rightAlligned");
             enabledInEmergencyVehicles = (bool)cfg.SelectToken("enabledInEmergencyVehicles");
-            subMenus = JsonConvert.DeserializeObject<SubMenu[]>(cfg.SelectToken("menus").ToString());
 
-            StartMenu();          
+            TriggerServerEvent("BadgerVehSpawner:GetFromServer");         
         }
 
-        private Menu mainMenu = new Menu("Vehicle Spawner", "Categories - Badger#5830");
+        [EventHandler("BadgerVehSpawner:SendToClient")]
+        private void ReceiveFromServer(string json)
+		{
+            subMenus = JsonConvert.DeserializeObject<SubMenu[]>(json);
+            StartMenu();
+        }
+
+        private Menu mainMenu = new Menu("Vehicle Spawner", "Vehicle Categories");
 
         private void StartMenu()
 		{
@@ -77,7 +86,7 @@ namespace BadgerVehSpawner
             MenuController.MenuToggleKey = menuKey;
 			MenuController.EnableMenuToggleKeyOnController = false;
 
-            foreach (SubMenu subMenu in subMenus)
+            foreach (dynamic subMenu in subMenus)
 			{
                 Menu newSubMenu = new Menu(subMenu.Name, "Made by Badger#5830");
                 MenuItem newMainItem = new MenuItem(subMenu.Name)
