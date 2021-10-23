@@ -1,6 +1,8 @@
 # Badger Vehicle Spawner
 Badger Vehicle Spawner is a simple Vehicle Spawner Menu using MenuAPI (https://github.com/TomGrobbe/MenuAPI)
 
+Make sure you download from **RELEASES** on the right side and NOT the source code.  
+
 ## Configuration
 Configuration is done within the config.json file, found in the folder named "Config".
 
