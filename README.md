@@ -15,6 +15,12 @@ Configuration is done within the config.json file, found in the folder named "Co
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`name:` This is the display name for the vehicle.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`spawncode:` This is the spawncode/model name for the vehicle.  
 
+#### Ace Perms Example
+In this example, let's say that the first category should be only for admins, or the ace group "group.admin".  
+To do this, I would first decide what ace perm I wanted to restrict the category to. Lets say I do "VehicleSpawner.Admin".  
+The aceRequired value in the menu in the config should therefore be "VehicleSpawner.Admin". To give admins this ace perm, I will then, in my server.cfg, do `add_ace group.admin VehicleSpawner.Admin allow`  
+By doing this, I have restricted the first category to just admins.  
+
 ## License
 Full license is viewable in the LICENSE file in this repository.  
 This license is subject to be changed at any given time.
