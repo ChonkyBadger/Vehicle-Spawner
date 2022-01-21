@@ -151,9 +151,37 @@ namespace BadgerVehSpawner
 					}
 				}
 
-                var vehicle = await World.CreateVehicle(model, spawnLoc, Game.PlayerPed.Heading);
-                Game.PlayerPed.SetIntoVehicle(vehicle, VehicleSeat.Driver);
-                SetVehicleEngineOn(GetVehiclePedIsIn(ped, false), true, true, false);
+                // Load model before spawning vehicle.
+                bool successful = await LoadModel(hash);
+                if (successful)
+                {
+                    var vehicle = await World.CreateVehicle(model, spawnLoc, Game.PlayerPed.Heading);
+                    Game.PlayerPed.SetIntoVehicle(vehicle, VehicleSeat.Driver);
+                    SetVehicleEngineOn(GetVehiclePedIsIn(ped, false), true, true, false);
+                }
+            }
+        }
+
+        private async Task<bool> LoadModel(uint modelHash)
+        {
+            // Check if the model exists in the game.
+            if (IsModelInCdimage(modelHash))
+            {
+                // Load the model.
+                RequestModel(modelHash);
+                // Wait until it's loaded.
+                while (!HasModelLoaded(modelHash))
+                {
+                    await Delay(0);
+                }
+                // Model is loaded, return true.
+                return true;
+            }
+            // Model is not valid or is not loaded correctly.
+            else
+            {
+                // Return false.
+                return false;
             }
         }
 
