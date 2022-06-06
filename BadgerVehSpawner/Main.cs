@@ -53,7 +53,8 @@ namespace BadgerVehSpawner
         private Control menuKey;
         private bool enabledInEmergencyVehicles; 
 
-        public Main()
+        [EventHandler("onClientMapStart")]
+        private void Start()
 		{
             var rawJson = LoadResourceFile(GetCurrentResourceName(), "Config/config.json");
             var cfg = JObject.Parse(rawJson);
@@ -72,7 +73,7 @@ namespace BadgerVehSpawner
             StartMenu();
         }
 
-        private Menu mainMenu = new Menu("Vehicle Spawner", "Vehicle Categories");
+        private readonly Menu mainMenu = new Menu("Vehicle Spawner", "Vehicle Categories");
 
         private void StartMenu()
 		{
@@ -88,7 +89,7 @@ namespace BadgerVehSpawner
 
             foreach (dynamic subMenu in subMenus)
 			{
-                Menu newSubMenu = new Menu(subMenu.Name, "Made by Badger#5830");
+                Menu newSubMenu = new Menu(subMenu.Name, "Badger#5830");
                 MenuItem newMainItem = new MenuItem(subMenu.Name)
                 {
                     Label = "→→→"
