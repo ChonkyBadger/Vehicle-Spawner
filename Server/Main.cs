@@ -85,7 +85,7 @@ namespace Server
 				}
 			}
 
-			// Only send to the client if it has any categories.
+			// Only send to the client if there are any categories.
 			if (anyPerms)
             {
                 player.TriggerEvent("VehicleMenu:SendListToClient", perms);
