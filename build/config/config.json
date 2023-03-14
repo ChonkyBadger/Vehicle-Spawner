@@ -9,6 +9,7 @@
 			{
 				"name": "Category A",
 				"menuTitle": "Category A",
+				"menuSubtitle": "These are cars I think",
 				"ace": "VehicleMenu.Category.A",
 				"vehicles": [
 					{
@@ -29,6 +30,7 @@
 			{
 				"name": "Category B",
 				"menuTitle": "Category B",
+				"menuSubtitle": "These are ALSO cars I think",
 				"ace": "VehicleMenu.Category.B",
 				"vehicles": [
 					{
