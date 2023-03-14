@@ -36,16 +36,14 @@ namespace Client
 		{
 			public string Name { get; }
 			public string MenuTitle { get; }
-			public string MenuSubtitle { get; }
 			public string Ace { get; }
 			public List<VehicleS> Vehicles { get; }
 
 			[JsonConstructor]
-			public Category(string name, string menuTitle, string menuSubtitle, string ace, List<VehicleS> vehicles)
+			public Category(string name, string menuTitle, string ace, List<VehicleS> vehicles)
 			{
 				Name = name;
 				MenuTitle = menuTitle;
-				MenuSubtitle = menuSubtitle;
 				Ace = ace;
 				Vehicles = vehicles;
 			}
@@ -96,7 +94,7 @@ namespace Client
 
 				if (perms[ci])
 				{
-					Menu submenu = new Menu(c.MenuTitle, c.MenuSubtitle);
+					Menu submenu = new Menu(c.MenuTitle, "Badger#5830");
 					MenuItem submenuItem = new MenuItem(c.Name)
 					{
 						Label = "→→→"

@@ -37,16 +37,14 @@ namespace Server
         {
             public string Name { get; }
             public string MenuTitle { get; }
-            public string MenuSubtitle { get; }
             public string Ace { get; }
             public List<VehicleS> Vehicles { get; }
 
             [JsonConstructor]
-            public Category(string name, string menuTitle, string menuSubtitle, string ace, List<VehicleS> vehicles)
+            public Category(string name, string menuTitle, string ace, List<VehicleS> vehicles)
             {
                 Name = name;
                 MenuTitle = menuTitle;
-                MenuSubtitle = menuSubtitle;
                 Ace = ace;
                 Vehicles = vehicles;
             }
