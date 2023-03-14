@@ -62,7 +62,7 @@ namespace Server
                 Model = model;
             }
         }
-
+        
 		private static readonly JObject cfg = JObject.Parse(LoadResourceFile(GetCurrentResourceName(), "config/config.json"));
 		private static readonly VehicleMenu menu = JsonConvert.DeserializeObject<VehicleMenu>(cfg.SelectToken("menu").ToString());
 
