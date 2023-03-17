@@ -1,0 +1,52 @@
+{
+	"menu": {
+		"title": "Vehicle Menu",
+		"subtitle": "Categories",
+		"menuKey": 166,
+		"rightAligned": true,
+
+		"categories": [
+			{
+				"name": "Category A",
+				"menuTitle": "Category A",
+				"menuSubtitle": "These are cars I think",
+				"ace": "VehicleMenu.Category.A",
+				"vehicles": [
+					{
+						"name": "Oracle",
+						"model": "oracle"
+					},
+					{
+						"name": "Baller",
+						"model": "baller"
+					},
+					{
+						"name": "Contender",
+						"model": "contender"
+					}
+				]
+			},
+
+			{
+				"name": "Category B",
+				"menuTitle": "Category B",
+				"menuSubtitle": "These are ALSO cars I think",
+				"ace": "VehicleMenu.Category.B",
+				"vehicles": [
+					{
+						"name": "Dubsta",
+						"model": "dubsta"
+					},
+					{
+						"name": "Granger",
+						"model": "granger"
+					},
+					{
+						"name": "Landstalker",
+						"model": "landstalker"
+					}
+				]
+			}
+		]
+	}
+}
