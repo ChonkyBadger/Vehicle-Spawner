@@ -5,7 +5,7 @@ game 'gta5'
 name 'Vehicle Menu'
 author 'Badger'
 description 'BadgerCaveDevelopment@gmail.com'
-version '1.0'
+version '2.1'
 url 'https://github.com/ChonkyBadger/'
 
 -- Files
