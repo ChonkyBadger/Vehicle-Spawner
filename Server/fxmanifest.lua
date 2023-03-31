@@ -1,4 +1,3 @@
--- Resource Metadata
 fx_version 'cerulean'
 game 'gta5'
 
@@ -6,12 +5,11 @@ name 'Vehicle Menu'
 author 'Badger'
 description 'BadgerCaveDevelopment@gmail.com'
 version '2.0'
-url 'https://github.com/ChonkyBadger/'
+github 'https://github.com/ChonkyBadger/Vehicle-Spawner/'
+discord 'https://discord.com/invite/TFCQE8d'
 
--- Files
 client_script 'Client.net.dll'
 server_script 'Server.net.dll'
-
 
 files {
     'MenuAPI.dll',
