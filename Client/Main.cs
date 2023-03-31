@@ -94,7 +94,7 @@ namespace Client
 
 				if (perms[ci])
 				{
-					Menu submenu = new Menu(c.MenuTitle, "Badger#5830");
+					Menu submenu = new Menu(c.MenuTitle, "Created by Badger#5830");
 					MenuItem submenuItem = new MenuItem(c.Name)
 					{
 						Label = "→→→"
